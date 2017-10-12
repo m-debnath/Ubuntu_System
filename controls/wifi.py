@@ -34,7 +34,9 @@ def switch_net():
         conn = active_connection()
         connect(ssid=conn, discon=True)
         print conn, "disconnected"
+        t0 = time.time()
         time.sleep(5)
+        print "waiting", round((time.time() - t0), 3), "s"
         if conn == "B704":
             connect(ssid="IPhone")
         else:
